@@ -1,5 +1,8 @@
 <div id='container'>
-  <div ng-repeat="link in data.links">
-    <a href="{{'api/links/' + link.code}}">{{link.code}} | {{link.url}}</a>
+  <button ng-click='reverse=!reverse'>Reverse</button>
+  <input ng-model='search' placeholder='Search'>
+  <div ng-repeat="link in data.links | filter: search| orderBy: 'visits':reverse">
+    <a href="{{'api/links/' + link.code}}">{{link.code}} | {{link.url}} | {{link.visits}}</a>
+    <pre>{{link}}</pre>
   </div>
 </div>
