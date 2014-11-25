@@ -1,6 +1,9 @@
 <div id='container'>
 <!-- Your code here -->
-
+<form name="urlForm">
+  URL: <input type="url" name="input" ng-model="text" required>
+  <span class="error" ng-show="urlForm.input.$error.required">Required!</span>
+  <span class="error" ng-show="urlForm.input.$error.url"
 </div>
 
 
