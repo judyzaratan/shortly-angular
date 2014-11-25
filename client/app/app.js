@@ -3,31 +3,54 @@ angular.module('shortly', [
   'shortly.links',
   'shortly.shorten',
   'shortly.auth',
-  'ngRoute'
+  'ui.router'
 ])
-.config(function($routeProvider, $httpProvider) {
-  $routeProvider
-    .when('/signin', {
-      templateUrl: 'app/auth/signin.html',
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  $urlRouterProvider.otherwise("/links");
+
+  $stateProvider
+    .state('signin', {
+      url:"/signin",
+      templateUrl:"app/auth/signin.html",
       controller: 'AuthController'
     })
-    .when('/signup', {
-      templateUrl: 'app/auth/signup.html',
-      controller: 'AuthController'
+    .state('signup',{
+      url:"/signup",
+      templateUrl:"app/auth/signup.html",
+      controller:'AuthController'
     })
-    .when('/links', {
-      templateUrl: 'app/links/links.html',
+    .state('links', {
+      url:"/links",
+      templateUrl:"app/links/links.html",
       controller: 'LinksController'
     })
-    .when('/shorten', {
-      templateUrl: 'app/shorten/shorten.html',
+    .state('shorten', {
+      url:"/shorten",
+      templateUrl: "app/shorten/shorten.html",
       controller: 'ShortenController'
     })
-    .otherwise({
-      redirectTo: '/links'
-    });
+  // $routeProvider
+  //   .when('/signin', {
+  //     templateUrl: 'app/auth/signin.html',
+  //     controller: 'AuthController'
+  //   })
+  //   .when('/signup', {
+  //     templateUrl: 'app/auth/signup.html',
+  //     controller: 'AuthController'
+  //   })
+  //   .when('/links', {
+  //     templateUrl: 'app/links/links.html',
+  //     controller: 'LinksController'
+  //   })
+  //   .when('/shorten', {
+  //     templateUrl: 'app/shorten/shorten.html',
+  //     controller: 'ShortenController'
+  //   })
+  //   .otherwise({
+  //     redirectTo: '/links'
+  //   });
 
-    $httpProvider.interceptors.push('AttachTokens');
+  $httpProvider.interceptors.push('AttachTokens');
 })
 .factory('AttachTokens', function ($window) {
   // this is an $httpInterceptor

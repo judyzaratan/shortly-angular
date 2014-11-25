@@ -10,15 +10,15 @@
   <div class="ui segment">
 
     <h1>Shortly</h1>
-    <a href="#/links" class="ui button">Link View</a>
-    <a href="#/shorten" class="ui button">Shorten View</a>
-    <a href="#/signin" class="ui button">Sign In</a>
-    <a href="#/signup" class="ui button">Sign Up</a>
+    <a ui-sref="links" class="ui button">Link View</a>
+    <a ui-sref="shorten" class="ui button">Shorten View</a>
+    <a ui-sref="signin" class="ui button">Sign In</a>
+    <a ui-sref="signup" class="ui button">Sign Up</a>
     <div class="ui divider"></div>
-    <div ng-view></div>
+    <div ui-view></div>
 
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
 
     <script src="app/auth/auth.js"></script>
     <script src="app/links/links.js"></script>
