@@ -114,12 +114,6 @@ input[type=url]:focus {
 }
 
 
-.error {
-  border: red solid 4px;
-  padding: 10px;
-  margin: 0 10px;
-}
-
 .clean {
   border: #efe solid 2px;
   padding: 10px;

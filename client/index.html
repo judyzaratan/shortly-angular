@@ -3,15 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <title>Shortly</title>
+    <link rel="stylesheet" type="text/css" href="/lib/semantic-ui/dist/semantic.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
   <body>
-    <h1>Shortly</h1>
-    <a href="#/links">Link View</a> |
-    <a href="#/shorten">Shorten View</a> |
-    <a href="#/signin">Sign In</a> |
-    <a href="#/signup">Sign Up</a>
+  <div class="ui segment">
 
+    <h1>Shortly</h1>
+    <a href="#/links" class="ui button">Link View</a>
+    <a href="#/shorten" class="ui button">Shorten View</a>
+    <a href="#/signin" class="ui button">Sign In</a>
+    <a href="#/signup" class="ui button">Sign Up</a>
+    <div class="ui divider"></div>
     <div ng-view></div>
 
     <script src="lib/angular/angular.js"></script>
@@ -22,5 +25,6 @@
     <script src="app/shorten/shorten.js"></script>
     <script src="app/services/services.js"></script>
     <script src="app/app.js"></script>
+  </div>
   </body>
 </html>

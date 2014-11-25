@@ -10,4 +10,14 @@ angular.module('shortly.links', [])
     });
   };
   $scope.getLinks();
+})
+
+.directive('shortenedLink', function(){
+  return {
+    restrict: 'E',
+    scope: {
+      link: '=link'
+    },
+    templateUrl: 'app/links/link.html'
+  };
 });
